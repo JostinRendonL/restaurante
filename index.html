@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>La Cueva — Cocina Ecuatoriana</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<!-- HEADER -->
+<header>
+  <nav id="navbar">
+    <div class="logo">La <span>Cueva</span></div>
+    <ul>
+      <li><a href="#about">Nosotros</a></li>
+      <li><a href="#menu">Menú</a></li>
+      <li><a href="#gallery">Galería</a></li>
+      <li><a href="#reservar">Reservas</a></li>
+    </ul>
+    <button class="nav-btn" onclick="document.getElementById('reservar').scrollIntoView({behavior:'smooth'})" aria-label="Reservar Mesa">Reservar Mesa</button>
+  </nav>
+</header>
+
+<!-- MAIN CONTENT -->
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-tag">Cocina Ecuatoriana de Autor · Desde 2018</div>
+      <h1>La<br><em>Cueva</em></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-sub">Sabores que cuentan historias</p>
+      <div class="hero-btns">
+        <a href="#menu" class="btn-primary">Ver Menú</a>
+        <a href="#reservar" class="btn-outline">Reservar</a>
+      </div>
+    </div>
+    <div class="hero-scroll">Descubrir</div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about" id="about">
+    <div class="about-img">
+      <img src="https://images.unsplash.com/photo-1600891964092-4316c288032e?w=900&q=80" alt="Chef ecuatoriano trabajando en la cocina de La Cueva">
+    </div>
+    <div class="about-content fade-in">
+      <p class="section-tag">Nuestra Historia</p>
+      <h2>Donde la tradición<br>se convierte en <em>arte</em></h2>
+      <p>Nació en 2018 con una misión simple: rescatar los sabores que crecieron en la memoria de cada ecuatoriano y elevarlos a una experiencia gastronómica sin igual.</p>
+      <p>Cada plato en La Cueva es un viaje. Desde los ceviches de la costa hasta los caldos de la sierra, interpretados con técnica de autor y los mejores ingredientes locales de temporada.</p>
+      <div class="about-stats">
+        <div>
+          <div class="stat-num">6+</div>
+          <div class="stat-label">Años de experiencia</div>
+        </div>
+        <div>
+          <div class="stat-num">48</div>
+          <div class="stat-label">Platos en carta</div>
+        </div>
+        <div>
+          <div class="stat-num">★4.9</div>
+          <div class="stat-label">Calificación promedio</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MENU -->
+  <section class="menu-section" id="menu">
+    <div class="section-header fade-in">
+      <p class="section-tag">Lo que ofrecemos</p>
+      <h2>Nuestra <em>Carta</em></h2>
+      <div class="gold-line"></div>
+      <p>Ingredientes frescos, recetas de autor, sabores que no olvidarás.</p>
+    </div>
+    <div class="menu-tabs">
+      <button class="tab active" onclick="filterMenu('todos', event)" aria-label="Mostrar todos los platos">Todos</button>
+      <button class="tab" onclick="filterMenu('entradas', event)" aria-label="Mostrar entradas">Entradas</button>
+      <button class="tab" onclick="filterMenu('platos', event)" aria-label="Mostrar platos fuertes">Platos Fuertes</button>
+      <button class="tab" onclick="filterMenu('postres', event)" aria-label="Mostrar postres">Postres</button>
+    </div>
+    <div class="menu-grid">
+      <div class="menu-item fade-in" data-cat="entradas">
+        <img class="menu-img" src="Ceviche.png" alt="Ceviche de Camarón con ingredientes frescos">
+        <p class="menu-cat">Entradas</p>
+        <h3 class="menu-name">Ceviche de Camarón</h3>
+        <p class="menu-desc">Camarones frescos, limón de costa, cebolla morada, tomate y cilantro. Servido con chifles artesanales.</p>
+        <div class="menu-price">$9.50</div>
+      </div>
+      <div class="menu-item fade-in" data-cat="entradas">
+        <img class="menu-img" src="patacones.jpeg" alt="Patacones con Hogao tradicionales">
+        <p class="menu-cat">Entradas</p>
+        <h3 class="menu-name">Patacones con Hogao</h3>
+        <p class="menu-desc">Plátano verde prensado y frito, acompañado de hogao casero y queso fresco de la sierra.</p>
+        <div class="menu-price">$6.00</div>
+      </div>
+      <div class="menu-item fade-in" data-cat="platos">
+        <img class="menu-img" src="Seco.jpg" alt="Seco de Pollo de Autor presentado elegantemente">
+        <p class="menu-cat">Platos Fuertes</p>
+        <h3 class="menu-name">Seco de Pollo de Autor</h3>
+        <p class="menu-desc">Pollo de campo cocinado en chicha de jora, naranjilla y especias andinas. Con arroz negro y maduro.</p>
+        <div class="menu-price">$14.00</div>
+      </div>
+      <div class="menu-item fade-in" data-cat="platos">
+        <img class="menu-img" src="lomo_a_la_piedra.png" alt="Corte premium de Lomo a la Piedra">
+        <p class="menu-cat">Platos Fuertes</p>
+        <h3 class="menu-name">Lomo a la Piedra</h3>
+        <p class="menu-desc">Corte premium de lomo fino sellado en piedra volcánica, chimichurri andino y papas nativas.</p>
+        <div class="menu-price">$22.00</div>
+      </div>
+      <div class="menu-item fade-in" data-cat="postres">
+        <img class="menu-img" src="tres_leches_naranjilla.png" alt="Postre Tres Leches de Naranjilla">
+        <p class="menu-cat">Postres</p>
+        <h3 class="menu-name">Tres Leches de Naranjilla</h3>
+        <p class="menu-desc">El clásico tres leches elevado con coulis de naranjilla ecuatoriana y merengue tostado.</p>
+        <div class="menu-price">$7.50</div>
+      </div>
+      <div class="menu-item fade-in" data-cat="postres">
+        <img class="menu-img" src="fondant_cacao_fino.png" alt="Fondant de Cacao Fino con helado">
+        <p class="menu-cat">Postres</p>
+        <h3 class="menu-name">Fondant de Cacao Fino</h3>
+        <p class="menu-desc">Coulant de chocolate ecuatoriano 72%, helado de taxo y sal de Maras. Una experiencia.</p>
+        <div class="menu-price">$9.00</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section class="experience">
+    <div class="exp-bg"></div>
+    <div class="exp-content fade-in">
+      <p class="section-tag">Una experiencia única</p>
+      <h2>Más que una <em>cena</em>,<br>un recuerdo</h2>
+      <div class="gold-line"></div>
+      <p>Nuestro espacio fue diseñado para que cada visita sea especial. Música en vivo los viernes, maridaje de coctelería artesanal, y un servicio que anticipa lo que necesitas antes de pedirlo.</p>
+      <div class="exp-features">
+        <div class="exp-feat">
+          <div class="exp-feat-icon">🎵</div>
+          <div class="exp-feat-label">Música en vivo</div>
+        </div>
+        <div class="exp-feat">
+          <div class="exp-feat-icon">🍷</div>
+          <div class="exp-feat-label">Cocteles artesanales</div>
+        </div>
+        <div class="exp-feat">
+          <div class="exp-feat-icon">🌿</div>
+          <div class="exp-feat-label">Ingredientes locales</div>
+        </div>
+        <div class="exp-feat">
+          <div class="exp-feat-icon">👨‍🍳</div>
+          <div class="exp-feat-label">Chef de autor</div>
+        </div>
+      </div>
+      <a href="#reservar" class="btn-primary" aria-label="Reservar ahora">Reservar ahora</a>
+    </div>
+  </section>
+
+  <!-- GALLERY -->
+  <section class="gallery" id="gallery">
+    <div class="section-header fade-in gallery-header-padded">
+      <p class="section-tag">Galería</p>
+      <h2>Nuestro <em>Ambiente</em></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=900&q=80" alt="Interior acogedor del restaurante La Cueva">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600&q=80" alt="Plato gourmet en mesa de madera">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=600&q=80" alt="Área del bar con cocteles">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?w=600&q=80" alt="Ensalada fresca y colorida">
+      </div>
+      <div class="gallery-item">
+        <img src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&q=80" alt="Deliciosos postres de autor">
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials">
+    <div class="section-header fade-in">
+      <p class="section-tag">Lo que dicen</p>
+      <h2>Nuestros <em>Clientes</em></h2>
+      <div class="gold-line"></div>
+    </div>
+    <div class="test-grid">
+      <article class="test-card fade-in">
+        <div class="stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">El mejor restaurante ecuatoriano que he visitado en años. El ceviche es extraordinario, y el ambiente te hace querer quedarte toda la noche.</p>
+        <h3 class="test-author">María Fernanda Vega</h3>
+        <p class="test-role">Guayaquil, Ecuador</p>
+      </article>
+      <article class="test-card fade-in">
+        <div class="stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">Vine por el lomo a la piedra y me enamoré del lugar. El servicio es impecable y los sabores son exactamente como los recuerdo de mi abuela.</p>
+        <h3 class="test-author">Carlos Rodríguez</h3>
+        <p class="test-role">Quito, Ecuador</p>
+      </article>
+      <article class="test-card fade-in">
+        <div class="stars">★★★★★</div>
+        <div class="test-quote">"</div>
+        <p class="test-text">Celebré mi aniversario aquí y fue perfecto. La atención, la comida, la música en vivo. Todo estuvo al nivel de un restaurante internacional.</p>
+        <h3 class="test-author">Ana Lucía Torres</h3>
+        <p class="test-role">Cuenca, Ecuador</p>
+      </article>
+    </div>
+  </section>
+
+  <!-- RESERVATION -->
+  <section id="reservar" class="reservation-section">
+    <div class="reservation-container">
+      <div class="fade-in res-info">
+        <p class="section-tag">¿Listo para visitarnos?</p>
+        <h2 class="reservation-title">Reserva tu <em>mesa</em></h2>
+        <p class="reservation-subtitle">Garantiza tu lugar en La Cueva y vive una experiencia gastronómica que no olvidarás. Grupos y eventos especiales con atención personalizada.</p>
+        <div class="contact-item"><span class="contact-icon">📍</span> Av. Estrada 812 y Ficus, Urdesa, Guayaquil</div>
+        <div class="contact-item">
+          <span class="contact-icon">📞</span> 
+          <a href="https://wa.me/593986456791?text=Hola,%20me%20gustar%C3%ADa%20hacer%20una%20reserva%20en%20La%20Cueva" target="_blank" rel="noopener noreferrer">+593 98 645 6791</a>
+        </div>
+        <div class="contact-item"><span class="contact-icon">🕐</span> Mar–Dom: 12:00 – 23:00</div>
+        <div class="contact-item">
+          <span class="contact-icon">✉️</span> 
+          <a href="mailto:hola@lacueva.ec">hola@lacueva.ec</a>
+        </div>
+      </div>
+      <div class="fade-in">
+        <form class="res-form" action="#" method="POST" onsubmit="event.preventDefault(); alert('Solicitud enviada. Nos pondremos en contacto pronto.');">
+          <div class="form-row">
+            <div class="form-group">
+              <label for="nombre">Nombre completo</label>
+              <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label for="telefono">Teléfono</label>
+              <input type="tel" id="telefono" name="telefono" placeholder="+593 99..." required>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fecha">Fecha</label>
+              <input type="date" id="fecha" name="fecha" required>
+            </div>
+            <div class="form-group">
+              <label for="hora">Hora</label>
+              <select id="hora" name="hora" required>
+                <option value="12:00">12:00</option>
+                <option value="13:00">13:00</option>
+                <option value="14:00">14:00</option>
+                <option value="19:00">19:00</option>
+                <option value="20:00">20:00</option>
+                <option value="21:00">21:00</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="personas">Número de personas</label>
+            <select id="personas" name="personas" required>
+              <option value="1">1 persona</option>
+              <option value="2">2 personas</option>
+              <option value="3-4">3–4 personas</option>
+              <option value="5-6">5–6 personas</option>
+              <option value="7+">Grupo grande (+7)</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="ocasion">Ocasión especial</label>
+            <textarea id="ocasion" name="ocasion" placeholder="Cumpleaños, aniversario, reunión de negocios..."></textarea>
+          </div>
+          <button type="submit" class="submit-btn" aria-label="Confirmar Reserva">Confirmar Reserva</button>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-brand">
+    <span class="logo">La <span>Cueva</span></span>
+    <p>Cocina ecuatoriana de autor en el corazón de Guayaquil. Sabores que cuentan historias desde 2018.</p>
+  </div>
+  <div class="footer-col">
+    <h4>Menú</h4>
+    <ul>
+      <li><a href="#menu">Entradas</a></li>
+      <li><a href="#menu">Platos Fuertes</a></li>
+      <li><a href="#menu">Postres</a></li>
+      <li><a href="#menu">Bebidas</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Nosotros</h4>
+    <ul>
+      <li><a href="#about">Historia</a></li>
+      <li><a href="#about">El Chef</a></li>
+      <li><a href="#">Prensa</a></li>
+      <li><a href="#">Eventos</a></li>
+    </ul>
+  </div>
+  <div class="footer-col">
+    <h4>Visítanos</h4>
+    <ul>
+      <li><a href="#reservar">Urdesa, Guayaquil</a></li>
+      <li><a href="#reservar">Reservaciones</a></li>
+      <li><a href="#">Delivery</a></li>
+      <li><a href="#">Gift Cards</a></li>
+    </ul>
+  </div>
+</footer>
+<div class="footer-bottom">
+  <span>© 2026 La Cueva. Todos los derechos reservados.</span>
+  <div class="social-links">
+    <a href="#" aria-label="Instagram">ig</a>
+    <a href="#" aria-label="Facebook">fb</a>
+    <a href="#" aria-label="Twitter">tw</a>
+  </div>
+</div>
+
+<!-- WHATSAPP FLOATING BUTTON -->
+<a href="https://wa.me/593986456791?text=Hola,%20me%20gustar%C3%ADa%20hacer%20una%20reserva%20en%20La%20Cueva" class="whatsapp-float" target="_blank" rel="noopener noreferrer" aria-label="Contactar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <!-- Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free -->
+    <path d="M380.9 97.1C339 55.1 283.2 32 223.9 32c-122.4 0-222 99.6-222 222 0 39.1 10.2 77.3 29.6 111L0 480l117.7-30.9c32.4 17.7 68.9 27 106.1 27h.1c122.3 0 224.1-99.6 224.1-222 0-59.3-25.2-115-67.1-157zM223.9 414.7c-32.3 0-63.9-8.6-91.7-24.9l-6.6-3.9-68.1 17.9 18.2-66.4-4.3-6.8c-18.1-28.8-27.7-62.4-27.7-96.8 0-103.5 84.3-187.8 188-187.8 50.1 0 97.2 19.5 132.6 55 35.4 35.4 55 82.5 55 132.6 0 103.6-84.3 187.8-188 187.8zm103.1-141.2c-5.7-2.8-33.5-16.5-38.7-18.4-5.2-1.9-9-2.8-12.8 2.8-3.8 5.7-14.7 18.4-18 22.2-3.3 3.8-6.6 4.3-12.3 1.4-5.7-2.8-24-8.8-45.7-28.2-16.9-15.1-28.3-33.8-31.6-39.4-3.3-5.7-.3-8.8 2.5-11.6 2.5-2.5 5.7-6.6 8.5-9.9 2.8-3.3 3.8-5.7 5.7-9.5 1.9-3.8.9-7.1-.5-9.9-1.4-2.8-12.8-30.8-17.5-42.2-4.6-11.1-9.3-9.6-12.8-9.8-3.3-.2-7.1-.2-10.9-.2-3.8 0-10 1.4-15.1 7.1-5.2 5.7-20 19.4-20 47.4 0 28 20.4 55 23.2 58.8 2.8 3.8 40.1 61.3 97 85.9 13.5 5.8 24.1 9.3 32.3 11.9 13.6 4.3 26 3.7 35.8 2.2 10.9-1.6 33.5-13.7 38.2-27 4.7-13.3 4.7-24.6 3.3-27-.9-2.3-3.3-3.8-9-6.6z"/>
+  </svg>
+</a>
+
+<script src="script.js"></script>
+</body>
+</html>
